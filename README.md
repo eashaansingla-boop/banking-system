@@ -1,16 +1,42 @@
-# React + Vite
+# Nexus Banking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, glassmorphic banking application built with React (Vite) and Flask, featuring MongoDB persistence.
 
-Currently, two official plugins are available:
+## Features
+- **Secure Authentication**: User login and registration.
+- **Real-time Transactions**: Deposit and withdraw with instant history updates.
+- **Admin Portal**: System-wide view of all accounts and balances.
+- **Cloud Persistence**: Integrated with MongoDB Atlas.
+- **Vercel Ready**: Optimized for serverless deployment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Deployment to Vercel
 
-## React Compiler
+1. **Environment Variables**:
+   In your Vercel project settings, add the following:
+   - `MONGO_URI`: `mongodb+srv://eashaansingla_db_user:18yBFTzapHUqTtEM@cluster0.bn0a8ge.mongodb.net/?appName=Cluster0`
+   - `ADMIN_USERNAME`: admin
+   - `ADMIN_PASSWORD`: admin123
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. **Build Settings**:
+   Vercel should automatically detect the Vite framework. If not, set the build command to `npm run build` and the output directory to `dist`.
 
-## Expanding the ESLint configuration
+3. **Database Access**:
+   Ensure your MongoDB Atlas cluster allows connections from `0.0.0.0/0` (Allow Access from Anywhere).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Local Development
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   npm install
+   ```
+
+2. Run the backend:
+   ```bash
+   python api/index.py
+   ```
+
+3. Run the frontend:
+   ```bash
+   npm run dev
+   ```
